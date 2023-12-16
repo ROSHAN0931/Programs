@@ -1,0 +1,21 @@
+The println() method is often used to display variables.
+To combine both text and a variable, use the + character:
+
+String name = "John";
+System.out.println("Hello " + name);
+
+String firstName = "John ";
+String lastName = "Doe";
+String fullName = firstName + lastName;
+System.out.println(fullName);
+
+int x = 5;
+int y = 6;
+System.out.println(x + y); // Print the value of x + y
+
+One Value to Multiple Variables
+You can also assign the same value to multiple variables in one line:
+
+int x, y, z;
+x = y = z = 50;
+System.out.println(x + y + z);
