@@ -1,0 +1,41 @@
+The if else statement:
+
+if (condition) {
+  // block of code to be executed if the condition is true
+} else {
+  // block of code to be executed if the condition is false
+}
+
+The else if Statement:
+
+if (condition1) {
+  // block of code to be executed if condition1 is true
+} else if (condition2) {
+  // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  // block of code to be executed if the condition1 is false and condition2 is false
+}
+
+Short Hand If...Else:
+
+variable = (condition) ? expressionTrue :  expressionFalse;
+
+Switch Statements:
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+The break Keyword:
+
+When Java reaches a break keyword, it breaks out of the switch block.
+This will stop the execution of more code and case testing inside the block.
+When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+A break can save a lot of execution time because it "ignores" the execution of all the rest of the code in the switch block.

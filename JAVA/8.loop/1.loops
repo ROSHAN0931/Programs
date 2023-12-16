@@ -1,0 +1,38 @@
+Looping:
+
+Loops can execute a block of code as long as a specified condition is reached.
+Loops are handy because they save time, reduce errors, and they make code more readable.
+
+While Loop:
+
+while (condition) {
+  // code block to be executed
+}
+
+Do/While Loop:
+
+do {
+  // code block to be executed
+}
+while (condition);
+
+Note: Do not forget to increase the variable used in the condition, otherwise the loop will never end!
+
+For Loop:
+
+for (declaration;condition;inc/dec) {
+  // code block to be executed
+}
+
+For-Each Loop:
+
+for (type variableName : arrayName) {
+  // code block to be executed
+}
+
+Example:
+
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (String i : cars) {
+  System.out.println(i);
+}
