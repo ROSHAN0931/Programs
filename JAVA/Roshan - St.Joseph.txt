@@ -1,0 +1,575 @@
+During the Physical Education hour, PT sir has decided to conduct some team games.He wants to split the students in the class into equal-sized teams.In some cases, there may be some students who are left out from teams and he wanted to use the left out, students, to assist him in conducting the team games. For instance, if there are 50 students in the class and if the class has to be divided into 7 equal-sized teams, 7 students will be there in each team and 1 student will be left out. PT sir asks your help to automate this team splitting task. Can you please help him out?
+
+Input Format:
+
+Input consists of 2 integers.
+The first integer corresponds to the number of students in the class.
+The second integer corresponds to the number of teams.
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter students : ");
+        int students=in.nextInt();//60
+        System.out.println("enter teams : ");
+        int teams=in.nextInt();//8
+        int noofteam = students/teams;//7
+        int leftout = students % teams;//4
+        System.out.println("Team : " + noofteam);
+        System.out.println("left out : " + leftout);
+    }
+}
+
+
+
+
+Each Sunday, a newspaper agency sells x copies of a certain newspaper for Rs.a per copy.
+The cost to the agency of each newspaper is Rs.b. The agency pays a fixed cost for storage,delivery and so on of Rs.100 per Sunday. The newspaper agency wants to calculate the profit obtained on Sundays.Can you please help them out by writing a program to compute the profit given x, a and b.
+
+Input Format:
+Input consists of 3 integers --- x, a and b.
+X is the number of copies sold, a is the cost per copy and b is the cost the agency spends per copy.
+
+Output Format:
+Refer Sample Input and Output for exact formatting specifications.
+
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int x=in.nextInt();//1000
+        int a=in.nextInt();//2
+        int b=in.nextInt();//1
+        int profit = ( x * (a - b) ) -100;
+        System.out.println("Profit : " + profit);//900
+    }
+}
+
+
+Control Structures :-
+	Controlling the flow of execution in a program is called control structures.	
+
+Types : -
+
+1.Conditional - simple if,if else,nested,switch case ,cascaded if else(else if ladder)
+
+2.Looping - for, while, do while
+
+3.Jump Statements - break , continue
+
+
+1.For Loop - 
+	When you know number of count is called for loop.
+
+Syntax : 
+	for(decalaration;cond;inc/dec)
+	{
+		//body
+	}	
+
+Example - Money count, Washing machine
+
+2.While loop
+	If you don't know the count it is called while loop.
+
+Syntax : 
+	while(condition)
+	{
+		//body
+		inc / dec ;
+	}
+
+Example - ceiling fan, bike or car tyres
+
+
+3.do while loop
+	You can run the loop for as number of times, but atleast once the output will be executed.
+
+Syntax :
+	do
+	{
+		//body
+		inc / dec;
+	}while(condition);
+
+Example - watch , television
+
+
+Problems : -
+
+Find facorial of a given number.
+input : 5
+output : 120
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int fact=1;
+        for (int i = 1; i <= n ; i++) {
+            fact= fact * i;
+        }
+        System.out.println("Factorial : " + fact);
+    }
+}
+
+
+Find the factors of given number.
+input: 12
+output: 1 2 3 4 6
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        System.out.print("factors are : ");
+        for (int i = 1; i < n ; i++) {
+            if(n%i==0){
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+
+Find the sum of factors from given input.
+input : 12
+output : 16
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+	int sum=0;
+        System.out.print("factors are : ");
+        for (int i = 1; i < n ; i++) {
+            if(n%i==0){
+            	sum= sum + i;
+	    }
+        }
+	System.out.println("Sum : " + sum);
+    }
+}
+
+
+Abudant Number
+input : 12
+output : Abudant Number
+input : 6
+output : Not Abudant
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+	int sum=0;
+        for (int i = 1; i < n ; i++) {
+            if(n%i==0){
+		sum=sum+i;
+            }
+        }
+	if(sum > n){
+   		System.out.print("Abudant");
+	}
+	else{
+		System.out.print("Not Abudant");
+	}    
+    }
+}
+
+
+Harshad Number.
+input : 21
+output :  Yes
+input : 22
+output : No
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int rem;
+        int sum=0;
+        int t=n;
+        while (n>0){
+            rem=n%10;
+            sum=sum+rem;
+            n=n/10;
+        }
+        if(t%sum==0){
+            System.out.println("harshad");
+        }
+        else {
+            System.out.println("not");
+        }
+    }
+}
+
+
+Strong Number
+input : 145
+output : Yes
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int rem;
+        int sum=0;
+        int t=n;
+        int fact;
+        while (n>0){
+            rem=n%10;
+            fact=1;
+            for (int i = 1; i <=rem ; i++) {
+                fact=fact * i;
+            }
+            sum=sum+fact;
+            n=n/10;
+        }
+        if(sum==t){
+            System.out.println("Strong");
+        }
+        else {
+            System.out.println("not");
+        }
+    }
+}
+
+
+
+Automorphic Number
+input : 5
+output : Yes
+input : 12
+output : No
+input : 25
+output : Yes
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int sq=n*n;
+
+        while (n>0){
+            if(n%10!=sq%10){
+                System.out.println("Not");
+                break;
+            }
+            n=n/10;
+            sq=sq/10;
+        }
+        if(n==0){
+            System.out.println("Automorphic");
+        }
+    }
+}
+
+
+Amstrong Number
+input : 153
+output : Yes
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int t1=n;
+        int t2=n;
+        int rem;
+        int s=0;
+        int c=0;
+        while(n>0){
+            c++;
+            n=n/10;
+        }
+        while(t1>0){
+            rem=t1 %10;
+            s=s+ (int)Math.pow(rem,c);
+            t1=t1/10;
+        }
+        if(t2==s){
+            System.out.println("Amstrong");
+        }
+        else {
+            System.out.println("Not");
+        }
+    }
+}
+
+
+Reverse Number
+input : 456
+output : 654
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int rem;
+        int s=0;
+        while(n>0){
+            rem=n%10;
+            s=s*10 + rem;
+            n/=10;
+        }
+        System.out.println(s);
+    }
+}
+
+
+Sum of Digits
+input : 456
+output : 15
+input : 127
+output : 10
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int rem;
+        int s=0;
+        while(n>0){
+            rem=n%10;
+            s=s + rem;
+            n/=10;
+        }
+        System.out.println(s);
+    }
+}
+
+
+Sum of Digits until single digits without using loops
+input : 456
+output : 6
+input : 334
+output : 1
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int s=0;
+        if(n>9){
+            s=(n%9==0)? 9 : n%9;
+        }
+        else {
+            s=n;
+        }
+        System.out.println(s);
+    }
+}
+
+
+
+Adam Number
+input : 12
+output : Yes
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int sq=n*n;
+        System.out.println("Square : " + sq);
+        int s=0;
+        while(sq>0){
+            s=s * 10 + (sq%10) ;
+            sq=sq/10;
+        }
+        System.out.println("Sq reverse : " + s);
+        int sqrt = (int)Math.sqrt(s);
+        System.out.println("Sqaureroot : " + sqrt);
+        int s1=0;
+        while (sqrt > 0){
+            s1 = s1 * 10 + (sqrt % 10);
+            sqrt/=10;
+        }
+        System.out.println("Sqrt reverse : " + s1);
+
+        if(n==s1){
+            System.out.println("Adam number");
+        }
+        else {
+            System.out.println("Not");
+        }
+    }
+}
+
+
+
+Fibonacci Series
+input : 8
+output : 0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 . 
+
+import java.util.Scanner;
+
+public class fibonacci {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter input");
+        int n = in.nextInt();
+
+        int a=0;
+        int b=1;
+        System.out.print(a + " , " + b + " , ");
+
+        int fib=0;
+        for (int i = 2; i < n; i++) {
+            fib = a + b;
+            a = b;
+            b = fib;
+            if (i == n-1) {
+                System.out.print(fib + " . ");
+            } else {
+                System.out.print(fib + " , ");
+            }
+        }
+    }
+}
+
+
+
+Friendly Pair
+input : 6,28
+output : Yes
+
+import java.util.Scanner;
+
+public class FriendlyPair {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        int s1=0,s2=0;
+        for (int i = 1; i <a ; i++) {
+            if(a%i==0){
+                s1+=i;
+            }
+        }
+        for (int i = 1; i <b ; i++) {
+            if(b%i==0){
+                s2+=i;
+            }
+        }
+        if(s1/a == s2/b){
+            System.out.println("Friendly");
+        }
+        else {
+            System.out.println("Not");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
